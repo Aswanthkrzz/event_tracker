@@ -1,0 +1,19 @@
+{% extends 'temp/dealer.html' %}
+{% block base %}
+    <div class="container">
+<table border="1" align="center">
+	 <tr align="center" style="color: black">
+	<th style="border: solid">Feedback</th>
+	<th style="border: solid">Date</th>
+	<th style="border: solid">Time</th>
+	</tr>
+    {% for i in aaa %}
+	 <tr align="center" style="color: black">
+		<td style="border: solid" height="5">{{ i.feedback }}</td>
+		<td style="border: solid" height="5">{{ i.date }}</td>
+	<td style="border: solid" height="5">{{ i.time }}</td>
+	</tr>
+    {% endfor %}
+</table>
+    </div>
+{% endblock %}

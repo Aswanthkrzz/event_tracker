@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+    <title>LeadMark Landing page | Free Bootstrap 4.3.x landing page</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="/static/assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="/static/assets/css/leadmark.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Raleway, sans-serif;
+}
+
+body {
+	background: linear-gradient(90deg, #1b1b1b,#0e0e0e);
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	{#min-height: 100vh;#}
+}
+
+.screen {
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);
+	position: relative;
+	height: 600px;
+	width: 360px;
+	box-shadow: 0px 0px 24px #5C5696;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;
+	height: 100%;
+}
+
+.screen__background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);
+}
+
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;
+	top: -50px;
+	right: 120px;
+	border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #6C63AC;
+	top: -172px;
+	right: 0;
+	border-radius: 32px;
+}
+
+.screen__background__shape3 {
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	top: -24px;
+	right: 0;
+	border-radius: 32px;
+}
+
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: #7E7BB9;
+	top: 420px;
+	right: 50px;
+	border-radius: 60px;
+}
+
+.login {
+	width: 320px;
+	padding: 30px;
+	padding-top: 156px;
+}
+
+.login__field {
+	padding: 30px 0px;
+	position: relative;
+}
+
+.login__icon {
+	position: absolute;
+	top: 30px;
+	color: #7875B5;
+}
+
+.login__input {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+    font-size: medium;
+    font-family:  monospace;
+	outline: none;
+	border-bottom-color: #6A679E;
+}
+
+.login__submit {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	padding: 20px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 90%;
+	color: #4C489D;
+	box-shadow: 0px 2px 2px #5C5696;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+	{#border-color: #6A679E;#}
+	outline: none;
+}
+
+.button__icon {
+	font-size: 24px;
+	margin-left: auto;
+	color: #7875B5;
+}
+
+.social-login {
+	position: absolute;
+	height: 140px;
+	width: 160px;
+	text-align: center;
+	bottom: 0px;
+	right: 0px;
+	color: #fff;
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-login__icon {
+	padding: 20px 10px;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0px 0px 8px #7875B5;
+}
+
+.social-login__icon:hover {
+	transform: scale(1.5);
+}
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="/">Home</a>#}
+{#                    </li>#}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/temp/about/">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/temp/service/">Our Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auditorium/reg/">Auditorium </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vender/vender/">Event </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/photo/reg/">Photographic Team </a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/user/user/">User </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="temp/mainhome/" class="ml-4 nav-link btn btn-primary btn-sm rounded">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <!-- Page Header -->
+    <header class="header">
+        <div class="overlay">
+            <h1 class="subtitle">our best wedding organizer</h1>
+            <h1 class="title">Eventive</h1>
+        </div>
+        <div class="shape">
+            <svg viewBox="0 0 1500 200">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z"/>
+            </svg>
+        </div>
+        <div class="mouse-icon"><div class="wheel"></div></div>
+    </header>
+
+ <section class="h-100 h-custom" style="background-color:white;">
+         <div id="home-header">
+     <div class="container">
+	<div class="screen">
+		<div class="screen__content">
+            <div >
+			<form method="post" class="login">
+                 {% csrf_token %}
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" name="name" placeholder="User name / Email">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input"  name="pass" placeholder="Password">
+				</div>
+				<button class="button login__submit">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+			</form>
+                </div>
+			<div class="social-login">
+				<h3><b><i>LOGIN</i></b></h3>
+				<div class="social-icons">
+{#					<a href="#" class="social-login__icon fab fa-instagram"></a>#}
+{#					<a href="#" class="social-login__icon fab fa-facebook"></a>#}
+{#					<a href="#" class="social-login__icon fab fa-twitter"></a>#}
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>
+	</div>
+</div>
+         </div>
+ </section>
+
+  <section id="contact" class="section has-img-bg pb-0">
+        <div class="container">
+            <div class="row align-items-center">
+{#                <div class="col-md-5 my-3">#}
+{#                    <h6 class="mb-0">Phone</h6>#}
+{#                    <p class="mb-4">+ 123-456-7890</p>#}
+{##}
+{#                    <h6 class="mb-0">Address</h6>#}
+{#                    <p class="mb-4">12345 Fake ST NoWhere AB Country</p>#}
+{##}
+{#                    <h6 class="mb-0">Email</h6>#}
+{#                    <p class="mb-0">info@website.com</p>#}
+{#                    <p></p>#}
+{#                </div>#}
+                <div class="col-md-7">
+{#                    <form>#}
+{#                        <h4 class="mb-4">Drop Us A Line</h4>#}
+{#                        <div class="form-row">#}
+{#                            <div class="form-group col-sm-4">#}
+{#                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Name">#}
+{#                            </div>#}
+{#                            <div class="form-group col-sm-4">#}
+{#                                <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email">#}
+{#                            </div>#}
+{#                            <div class="form-group col-sm-4">#}
+{#                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Subject">#}
+{#                            </div>#}
+{#                            <div class="form-group col-12">#}
+{#                                <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Message"></textarea>#}
+{##}
+{#                            </div>#}
+{#                            <div class="form-group col-12 mb-0">#}
+{#                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Send</button>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </form>#}
+                </div>
+            </div>
+            <!-- Page Footer -->
+            <footer class="mt-5 py-4 border-top border-secondary">
+                <p class="mb-0 small">&copy; <script>document.write(new Date().getFullYear())</script>, LeadMark Created By <a href="https://www.devcrud.com" target="_blank">DevCrud.</a>  All rights reserved </p>
+            </footer>
+            <!-- End of Page Footer -->
+        </div>
+    </section>
+	<!-- core  -->
+    <script src="/static/assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="/static/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="/static/assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope -->
+    <script src="/static/assets/vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- LeadMark js -->
+    <script src="/static/assets/js/leadmark.js"></script>
+
+</body>
+</html>

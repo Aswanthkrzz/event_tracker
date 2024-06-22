@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auditorium</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .auditorium-info {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .auditorium-image {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .auditorium-address {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .auditorium-rent {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>{{ vender.name }}</h1>
+</header>
+
+<div class="container card shadow">
+    <div class="auditorium-info">
+        <img class="auditorium-image" src="/static/{{ vender.image }}" alt="Auditorium Image">
+        <div class="auditorium-info">
+             <div class="m-5" style="margin-left: 80px">
+
+            <h2> Address:</h2>
+            <p class="auditorium-address" style="color:blue">{{ vender.adress }}</p>
+
+            <h2>Contact Number:</h2>
+            <p class="auditorium-rent" style="color:blue">{{ vender.phone }}</p>
+
+            <h2>Email:</h2>
+            <p class="auditorium-rent" style="color:blue">{{ vender.email }}</p>
+
+            <h2>Location</h2>
+            <p class="auditorium-rent"style="color:blue">{{ vender.place }}</p>
+
+        </div>
+        <div>
+
+    <a type="submit" href="{% url 'updat1' idd=vender.vend_id %}" class="btn btn-success" style="border-radius: 4px;width: 1160px">Book</a>
+   </div><br>
+        <div>
+    <a type="submit" href="/vender/search/" class="btn btn-danger" style="border-radius: 4px;width: 1160px">cancel</a>
+   </div><br><br>
+        {#            <div container>#}
+        <div class="card" style="width: 100%; color: #0c5a6d">
+            <div class="card-header">
+               <i class="material-icons" style="font-size:36px">feedback</i> <b>Feedback</b>
+            </div>
+            <div class="card-body">
+{#                <form action="/action_page.php" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    <div class="form-outline mb-4">#}
+{#                        <textarea id="form3Example1q" placeholder="feedback" name="feedback" class="form-control"#}
+{#                                  required=""/></textarea>#}
+{#                    </div>#}
+
+{#                    <button type="submit" >#}
+                        <a type="submit" href="{% url 'vender_feedback' id=vender.vend_id %}" class="btn btn-primary" style="background-color: #007bff;border-radius: 4px;margin-left: 999px" >Review</a>
+{#                    </button>#}
+{#                    <button type="submit" >#}
+{#                        <a href="{% url 'boo' idd=vender.vend_id %}" class="btn btn-primary">book</a>#}
+{#                    </button>#}
+{#                </form>#}
+            </div>
+           </div>
+            {% for feedback in feedbacks %}
+                <div class="card">
+                    <div class="card-body">
+{#                        <h4 ><u>Name</u></h4>#}
+                        <h5 ><i class='fas fa-user-circle' style='font-size:30px;color:green'>{{ feedback.u.name }}</i></h5><br>
+{#                        <h4>feedback</h4>#}
+                        <h5 class="card-text" style="color: black" >{{ feedback.feedback }}</h5>
+                         <p style="color: gray">{{ feedback.date_time }}</p>
+                    </div>
+                </div>
+           {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>

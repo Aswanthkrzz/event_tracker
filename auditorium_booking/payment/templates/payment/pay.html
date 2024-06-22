@@ -1,0 +1,68 @@
+
+
+{% extends 'temp/user_home.html' %}
+{% block base %}
+<head>
+  <title>Payment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    form {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="name"],
+    input[type="number"] {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 5px;
+      width: 100%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    button[type="submit"] {
+      background-color: #4CAF50;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<div class="col-6 mx-auto" style="margin-top:10%;">
+  <form action="{% url 'payment' %}" method='POST'>
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="name" name="name" id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1">Amount</label>
+      <input type="number" name="amount" id="exampleInputPassword1">
+    </div>
+    <div>
+      <button type="submit">Pay Now</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

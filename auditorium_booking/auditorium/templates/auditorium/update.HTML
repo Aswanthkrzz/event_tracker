@@ -1,0 +1,58 @@
+{% extends 'temp/mainhome.html' %}
+{% block base %}
+	<h1 align="center">AUDITORIUM REGISTERATION</h1>
+	<FORM method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+		<table align="center">
+            {% for i in ok %}
+			<tr>
+				<td> AUDITORIUM NAME</td>
+				<td><input type="text" name="name" required value="{{ i.name }}"></td>
+			</tr>
+			<tr>
+				<td>ADDRESS</td>
+				<td><TEXTAREA id="add" name="addr" cols="30" rows="5" required>{{ i.address}}</TEXTAREA>
+				</td>
+				</tr>
+				<tr>
+					<td>PLACE</td>
+					<td><input type="text" name="place" required value="{{ i.place }}"></td>
+				</tr>
+				<tr>
+					<td>EMAIL</td>
+					<td><input type="text" name="mail"required value="{{ i.email }}"></td>
+				</tr>
+				<tr>
+					<td>CONTACT NUMBER</td>
+					<td><input type="text" name="phone" required value="{{ i.phone }}"></td>
+				</tr>
+				<tr>
+					<td>AMOUNT</td> 
+					<td><input type="text" name="amt"required {{ i.amount }}></td>
+				</tr>
+				<tr>
+
+					<td>ADD IMAGE</td>
+					<td><input type="file" name="sds"required ></td>
+
+				</tr>
+                <tr>
+                    <td>SERVICES</td>
+                    <td><textarea name="services">{{ i.services }}</textarea></td>
+                </tr>
+{#                <tr>#}
+{#                    <td>password</td>#}
+{#                    <td><input type="text" name="password" value="{{ i.p }}"></td>#}
+{#                </tr>#}
+            {% endfor %}
+
+				<tr>
+					<td></td>
+					<td><input type="submit" onclick="alert('Added successfully')" name="register" value="REGISTER"></td>
+				</tr>
+
+
+		</table>
+	</FORM>
+
+{% endblock %}

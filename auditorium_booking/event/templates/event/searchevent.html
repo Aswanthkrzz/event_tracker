@@ -1,0 +1,48 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h1 align="center">SEARCH EVENT GROUP</h1>
+	<FORM method="post">
+     {% csrf_token %}
+		<table align="center">
+			<tr>
+				<td>event group name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+            <td align="center" colspan="2"><input type="submit" name="ser" value="SEARCH" class="btn btn-primary"></td>
+
+
+
+
+
+		</table>
+        <table border="1" align="center">
+        {% if objval %}
+		<tr>
+			<td>NAME</td>
+            <td>ADDRESS</td>
+			<td>LICENSE ID</td>
+{#			<td>CONTACT NUMBER</td>#}
+{#			<td>AMOUNT</td>#}
+            <td></td>
+            <td></td>
+			{#<td>STATUS</td>#}
+		</tr>
+            {% for i in objval %}
+		<tr style="color: #1b1b1b">
+			<td>{{ i.name }}</td>
+{#			<td>{{ i.contact_number }}</td>#}
+			<td>{{ i.adress }}</td>
+{#			<td>{{ i.email }}</td>#}
+			<td>{{ i.reg_number }}</td>
+{#			<td>{{ i.amount }}</td>#}
+            <td><a href="{% url 'booking' idd=i.e_id %}">book</a> </td>
+			 {#<td></td>#}
+
+		</tr>
+            {% endfor %}
+
+	</table>
+    {% endif %}
+	</FORM>
+
+{% endblock %}

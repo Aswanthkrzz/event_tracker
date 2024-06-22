@@ -1,0 +1,27 @@
+
+{#{% extends 'temp/admin.html' %}#}
+{#{% block dealer %}#}
+
+	<h1 align="center">BOOKING</h1>
+	<table border="2" align="center">
+		<tr>
+			<td>AUD_NAME</td>
+			<td>PLACE</td>
+			<td>CONTACT NO</td>
+			<td>AMOUNT</td>
+              <td>BOOKING TIME</td>
+		</tr>
+        {% for i in ok %}
+		<tr>
+			<td>{{ i.aud_id }}</td>
+			<td>{{ i.aud_id }}</td>
+			<td>{{ i.aud_id }}</td>
+			<td>{{ i.aud_id }}</td>
+            <td>{{ i.booking_time }}</td>
+			<td><a href="{% url 'book' idd=i.ab_id%}">BOOK</a></td>
+
+		</tr>
+		{% endfor %}
+	</table>
+
+{#{% endblock %}#}

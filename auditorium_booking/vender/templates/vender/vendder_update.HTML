@@ -1,0 +1,49 @@
+{% extends 'temp/mainhome.html' %}
+{% block base %}
+	<h1 align="center">VENDER UPDATION</h1>
+	<FORM method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+		<table align="center">
+            {% for i in ok %}
+			<tr>
+				<td>NAME</td>
+				<td><input type="text" name="name"required value="{{ i.name }}"></td>
+			</tr>
+			<tr>
+				<td>ADDRESS</td>
+				<td><TEXTAREA id="add" name="addr" cols="30" rows="5"required >{{ i.adress }}</TEXTAREA>
+				</td>
+				</tr>
+				<tr>
+					<td>PLACE</td>
+					<td><input type="text" name="place"required value="{{ i.place }}"></td>
+				</tr>
+				<tr>
+					<td>EMAIL</td>
+					<TD><input type="text" name="mail"required value="{{ i.email }}"></TD>
+				</tr>
+				<tr>
+					<td>PHONE</td>
+					<td><input type="text" name="phone"required pattern="[0-9]{10}" value="{{ i.phone }}"></td>
+				</tr>
+{#				<tr>#}
+{#					<td>USERNAME</td>#}
+{#					<td><input type="text" name="name"required></td>#}
+{#				</tr>#}
+				<tr>
+					<td>PASSWORD</td>
+					<td><input type="text" name="pass" required value="{{ i.password }}"></td>
+
+				</tr>
+            {% endfor %}
+
+				<tr>
+					<td></td>
+					<td><input type="submit" onclick="alert('Updated successfully')" name="regitr" value="REGISTER"></td>
+				</tr>
+
+
+		</table>
+	</FORM>
+
+{% endblock %}

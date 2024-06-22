@@ -1,0 +1,28 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+	<h1 align="center">VIEW USER</h1>
+	<table border="2" align="center">
+		<tr>
+			<td>NAME</td>
+			<td>ADDRESS</td>
+    		<td>PLACE</td>
+			<td>EMAIL</td>
+			<td>PHONE NUMBER</td>
+            <td>PASSWORD</td>
+		</tr>
+        {% for i in ok %}
+		<tr>
+			<td>{{ i.name }}</td>
+			<td>{{ i.address }}</td>
+			<td>{{ i.place }}</td>
+			<td>{{ i.email }}</td>
+			<td>{{ i.phone }}</td>
+            <td>{{ i.password }}</td>
+        <td><a href="{% url 'updat' idd=i.u_id %}">updat</a></td>
+        <td><a href="{% url 'delete' idd=i.u_id %}">delete</a></td>
+		</tr>
+        {% endfor %}
+		
+	</table>
+
+{% endblock %}

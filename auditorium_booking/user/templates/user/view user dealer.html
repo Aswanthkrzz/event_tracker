@@ -1,0 +1,27 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<h1 align="center">MANAGE CUSTOMER</h1>
+	<table border="2" align="center">
+		<tr>
+			<td>NAME</td>
+			<td>ADDRESS</td>
+    		<td>PLACE</td>
+			<td>EMAIL</td>
+			<td>PHONE NUMBER</td>
+            <td></td>
+		</tr>
+        {% for i in ok %}
+		<tr>
+			<td>{{ i.name }}</td>
+			<td>{{ i.address }}</td>
+			<td>{{ i.place }}</td>
+			<td>{{ i.email }}</td>
+			<td>{{ i.phone }}</td>
+        <td><button><a href="{% url 'accpat' idd=i.u_id %}">accept</a></button></td>
+        <td><button><a href="{% url 'rejct' idd=i.u_id %}">reject</a></button></td>
+		</tr>
+        {% endfor %}
+		
+	</table>
+
+{% endblock %}

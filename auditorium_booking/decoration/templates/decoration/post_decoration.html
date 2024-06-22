@@ -1,0 +1,40 @@
+{% extends 'temp/dealer.html' %}
+{% block base %}
+
+<form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>IMAGE:</td>
+            <td><input type="file" name="img" ></td>
+        </tr>
+        <tr>
+            <td>FUNCTION ID:</td>
+            <td><input type="text" name="funtion"></td>
+        </tr>
+        <tr>
+            <td>AMOUNT:</td>
+            <td><input type="text" name="price"></td>
+        </tr>
+        <tr>
+            <td>DISCRIPTION:</td>
+            <td><input type="text" name="discription"></td>
+        </tr>
+        <tr>
+            <td>INDOOR\OUTDOOR:</td>
+            <td><input type="text" name="place"></td>
+        </tr>
+        <tr>
+            <td>EVENT TEAM NAME:</td>
+            <td><input type="text" name="event"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" onclick="alert('Added successfully')" value="submit"></td>
+        </tr>
+
+    </table>
+
+</form>
+
+{% endblock %}

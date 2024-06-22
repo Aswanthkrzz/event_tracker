@@ -1,0 +1,27 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<form>
+    <table border="1" align="center">
+        <tr>
+            <td>IMAGE</td>
+            <td>FOOD_ID</td>
+            <td>AMOUNT\PLATE</td>
+            <td>DISCRIPTION</td>
+            <td>INDO0R\OUTDOOR</td>
+            <td>event team name</td>
+        </tr>
+        {% for i in obj %}
+        <tr>
+
+            <td><img src="/static/{{ i.image }}" height="300" width="300"> </td>
+            <td>{{ i.food_id }}</td>
+            <td>{{ i.price }}</td>
+            <td>{{ i.discription }}</td>
+            <td>{{ i.place }}</td>
+        <td>{{ i.event_team_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+
+{% endblock %}
